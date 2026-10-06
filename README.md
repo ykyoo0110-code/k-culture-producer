@@ -56,7 +56,11 @@ Copy-Item .env.example .env
 
 ## 배포 구성 및 상태
 
-사용자 화면은 Vercel, 서버는 Render, 데이터와 미디어는 Supabase를 사용하는 구성입니다. 현재 GitHub 업로드와 배포 준비를 마쳤으며 외부 서비스 배포를 진행 중입니다.
+사용자 화면은 Vercel, 서버는 Render, 데이터와 미디어는 Supabase를 사용하는 구성입니다. 2026년 10월 6일 Vercel 사용자 화면과 Render 서버를 배포했습니다. 관리자 로그인·데이터 조회·9단계 체험 진행·설정의 클라우드 저장을 확인했습니다.
+
+서비스: https://k-culture-producer.vercel.app
+
+관리자: https://k-culture-producer.vercel.app/admin
 
 - Render: `backend` 폴더의 Dockerfile 사용 (Python 3.13, FFmpeg, 한글 폰트 포함)
 - Vercel: Vite 빌드, 출력 폴더 `dist`, `VITE_API_BASE_URL`에 Render 서버 주소 입력
