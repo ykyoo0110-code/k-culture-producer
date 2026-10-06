@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+**/.venv*/
+**/__pycache__/
+*.pyc
+tmp/
+output/
+reference/
+backend/generated/
+.DS_Store
+
+backend/site_content.json

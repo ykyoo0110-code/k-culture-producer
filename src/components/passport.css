@@ -1,0 +1,42 @@
+
+.passport-launch{position:fixed;bottom:18px;left:18px;z-index:40;border:1px solid #cfb978;border-radius:28px;padding:10px 16px;color:#f9edc4;background:#152f3a;box-shadow:0 6px 24px #0005;cursor:pointer}
+.passport-shade{position:fixed;inset:0;z-index:110;background:#000b;display:grid;place-items:center;padding:16px;overflow:auto}
+.passport-book{box-sizing:border-box;width:min(660px,100%);max-height:94vh;overflow:auto;border:2px solid #baa568;border-radius:15px;padding:clamp(16px,4vw,32px);background:linear-gradient(145deg,#123942,#072229);color:#f8eed6;box-shadow:0 12px 40px #0008}
+.passport-book header{display:flex;justify-content:space-between;align-items:center;gap:12px;letter-spacing:.09em}
+.passport-book header button{border:0;background:transparent;color:inherit;cursor:pointer;font-size:23px}
+.passport-book h2{font-size:clamp(23px,4vw,33px);margin:10px 0 3px;color:#e8d49b}
+.passport-number{font-size:12px;letter-spacing:.1em;margin:0 0 20px}
+.passport-identity{display:flex;align-items:center;gap:18px;border-block:1px solid #b6a36b77;padding:16px 0}
+.passport-identity img{width:85px;height:105px;object-fit:contain;background:#ffffff18;border-radius:8px}
+.passport-identity>div{display:grid;gap:7px}.passport-identity strong{font-size:22px;overflow-wrap:anywhere}
+.passport-progress{display:flex;justify-content:space-between;margin:19px 0 7px}.passport-progressbar{height:9px;background:#ffffff33;border-radius:20px;overflow:hidden}.passport-progressbar div{height:100%;background:#c8ac62;transition:width .3s}
+.passport-stamps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:22px}.stamp{min-height:70px;border:1px dashed #d4c6a159;border-radius:10px;opacity:.48;display:grid;place-content:center;text-align:center;gap:5px}.stamp.earned{opacity:1;color:#ebd79f;border:2px solid #cbb173;transform:rotate(-2deg)}.stamp span{font-size:21px}.stamp small{font-size:10px}.passport-foot{text-align:center;font-size:12px;margin:20px 0 0}
+@media(max-width:480px){.passport-stamps{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.stamp{min-height:55px}.passport-launch{bottom:12px;left:12px;font-size:12px}}
+
+/* PATCH18: 모바일 여권을 스크롤 없이 읽을 수 있도록 압축, 사진은 위쪽 기준 전체 표시 */
+.passport-identity img { flex: 0 0 auto; object-fit: contain; object-position: center top; }
+@media (max-width: 640px) {
+  .passport-shade { padding: 6px; }
+  .passport-book { width: min(100%, 480px); max-height: calc(100svh - 12px); padding: 10px 12px; }
+  .passport-book h2 { margin: 3px 0; font-size: clamp(1.18rem, 5vw, 1.6rem); }
+  .passport-number { margin-bottom: 4px; font-size: .65rem; }
+  .passport-identity { padding: 6px 0; gap: 10px; }
+  .passport-identity img { width: 62px; height: min(17svh, 90px); object-fit: contain; object-position: center top; }
+  .passport-identity > div { gap: 3px; min-width: 0; }
+  .passport-identity strong { font-size: 1rem; }
+  .passport-progress { margin: 8px 0 4px; }
+  .passport-stamps { margin-top: 9px; gap: 4px; }
+  .stamp { min-height: clamp(38px, 7svh, 56px); padding: 2px 0; gap: 1px; }
+  .stamp span { font-size: .9rem; }
+  .stamp small { font-size: .56rem; }
+  .passport-foot { margin: 7px 0 0; font-size: .7rem; }
+}
+
+
+/* DISPLAY FIX: enlarge selected character in passport, prioritize face/top when cropped. */
+.passport-book .passport-identity img { flex:0 0 auto; width:clamp(90px,22vw,116px); height:clamp(118px,29vw,152px); object-fit:cover; object-position:center top; background:#ffffff18; }
+.passport-book .passport-identity > div { min-width:0; }
+@media(max-width:640px) {
+  .passport-book .passport-identity img { width:clamp(76px,23vw,100px); height:clamp(96px,29vw,128px); object-fit:cover; object-position:center top; }
+  .passport-book .passport-identity { align-items:center; }
+}

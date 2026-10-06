@@ -1,0 +1,189 @@
+/* 관리자 화면은 체험 UI와 분리한 독립적 작업 영역입니다. */
+.admin-dashboard{min-height:100vh;background:#0c1220;color:#f2f6ff;padding:24px;line-height:1.5}.admin-dashboard header{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between}.admin-dashboard a{color:#8de8ff}.admin-dashboard nav{display:flex;flex-wrap:wrap;gap:16px;padding:20px 0}.admin-dashboard button{padding:9px 14px;border:1px solid #60718b;border-radius:8px;background:#263a5f;color:#fff;cursor:pointer}.admin-dashboard button:disabled{opacity:.5;cursor:default}.admin-dashboard input,.admin-dashboard select{padding:9px;max-width:100%;background:#fff;color:#111;border-radius:6px}.admin-dashboard section,.admin-login{background:#161f31;padding:20px;margin:16px 0;border:1px solid #394b67;border-radius:12px}.admin-dashboard .admin-login{max-width:440px;margin:70px auto}.admin-login input{display:block;width:100%;margin:12px 0}.admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}.admin-stats article{display:grid;gap:4px}.admin-stats b{font-size:2rem}.admin-table{overflow-x:auto}.admin-dashboard table{width:100%;border-collapse:collapse;min-width:600px}.admin-dashboard th,.admin-dashboard td{padding:10px;text-align:left;border-bottom:1px solid #44526c;vertical-align:top}.admin-dashboard td button{margin-right:6px}.admin-gallery{display:flex;flex-wrap:wrap;gap:12px}.admin-gallery article{width:140px;display:grid;gap:8px}.admin-gallery img{width:100%;height:150px;object-fit:contain;background:#0c1220}.admin-upload{display:flex;flex-wrap:wrap;align-items:center;gap:14px}.admin-upload label{display:grid;gap:5px}.admin-error{color:#ff9dab}.certificate-controls{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}.certificate-controls button{padding:9px 14px;background:#183559;color:white;border:1px solid #8099bb;border-radius:6px;cursor:pointer}
+
+/* Newly registered media editing form */
+.admin-media-edit{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:16px 0;padding:14px;border:1px solid #53688b;border-radius:8px}.admin-media-edit label{display:grid;gap:4px}.admin-media-edit label:has([type=checkbox]){display:flex;align-items:center}.admin-media-edit input[type=checkbox]{width:auto}
+
+/* PATCH 02: 파일 선택 시 미리보기 + 등록 자료 썸네일 */
+.admin-selected-preview{display:flex;flex-direction:column;align-items:flex-start;gap:9px;padding:14px;border:1px solid #60718b;border-radius:10px;background:#0d1829;width:min(100%,440px)}
+.admin-selected-preview img,.admin-selected-preview video{display:block;width:100%;max-height:320px;object-fit:contain;background:#070e18;border-radius:8px}
+.admin-selected-preview small{overflow-wrap:anywhere}
+.admin-media-thumb{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:140px}
+.admin-media-thumb img,.admin-media-thumb video{display:block;width:180px;max-width:100%;height:115px;object-fit:contain;background:#070e18;border-radius:6px}
+.admin-dashboard .admin-upload{align-items:end}.admin-dashboard .admin-upload .admin-selected-preview{flex-basis:100%}
+
+/* PATCH 03: 관리자 내비게이션을 버튼형으로 정리하고, 현재 첫 화면 콘텐츠를 바로 관리합니다. */
+.admin-dashboard .admin-nav{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:10px;padding:14px 0 16px;background:linear-gradient(180deg,#0c1220 75%,rgba(12,18,32,0));backdrop-filter:blur(8px)}
+.admin-dashboard .admin-nav button{min-height:42px;padding:10px 16px;border:1px solid #4c6488;border-radius:10px;background:#182841;color:#eaf3ff;font-weight:700;letter-spacing:.01em;transition:.18s ease}
+.admin-dashboard .admin-nav button:hover{transform:translateY(-1px);background:#233b61;border-color:#7db7ff}
+.admin-dashboard .admin-nav .admin-nav-primary{background:#0e6b7d;border-color:#34c7de;color:#fff}
+.admin-dashboard .admin-nav .admin-nav-refresh{margin-left:auto;background:#263a5f}
+.admin-screen-management{scroll-margin-top:86px}
+.admin-section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.admin-section-head h2{margin:2px 0 4px}.admin-section-head p{margin:0;color:#aebbd0}
+.admin-kicker{font-size:.78rem!important;color:#63def2!important;letter-spacing:.18em;font-weight:800}
+.admin-screen-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.admin-screen-card{min-width:0;padding:16px;background:#0d1829;border:1px solid #3a4e6c;border-radius:12px;display:flex;flex-direction:column;gap:12px}
+.admin-card-title{display:flex;align-items:center;justify-content:space-between;gap:10px}.admin-card-title strong{font-size:1.02rem}.admin-card-title span{font-size:.75rem;color:#7dd7e7;border:1px solid #31586c;border-radius:999px;padding:3px 8px}
+.admin-logo-preview,.admin-intro-preview{min-height:150px;border:1px solid #263b58;border-radius:10px;background:#08111f;display:grid;place-items:center;overflow:hidden}
+.admin-logo-preview img{max-width:100%;max-height:150px;object-fit:contain;padding:12px}.admin-intro-preview video{width:100%;height:190px;object-fit:contain;background:#050b13}
+.admin-logo-text-preview{display:flex;align-items:center;gap:12px;padding:20px}.admin-logo-text-preview b{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#18b9d4;color:#07111d;font-size:1.5rem}.admin-logo-text-preview span{font-weight:800;letter-spacing:.06em}
+.admin-file-button{display:flex;justify-content:center;align-items:center;min-height:42px;border:1px solid #5e789f;border-radius:9px;background:#213858;color:#fff;font-weight:800;cursor:pointer}.admin-file-button:hover{background:#2a4872}.admin-file-button input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.admin-screen-card small{color:#91a2bb}.admin-copy-preview p{margin:0;padding:10px 0;border-bottom:1px solid #26364d;display:grid;gap:4px}.admin-copy-preview p b{color:#6fe2f4;font-size:.8rem}.admin-copy-preview p span{color:#f3f7ff;overflow-wrap:anywhere}
+@media(max-width:980px){.admin-screen-cards{grid-template-columns:1fr}.admin-dashboard .admin-nav .admin-nav-refresh{margin-left:0}}
+
+
+/* PATCH 04: 관리자 상단 이동 버튼과 첫 화면 콘텐츠 편집 UI */
+.admin-header-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.admin-dashboard .admin-experience-button{background:#0e6b7d;border-color:#49d9ef;color:#fff;font-weight:800}
+.admin-dashboard .admin-experience-button:hover{background:#13859a}
+.admin-logo-preview{border-radius:14px}
+.admin-logo-preview img{width:118px;height:118px;object-fit:contain;border-radius:50%;border:1px solid #ff4fa3;padding:8px;background:#0b1423}
+.admin-copy-editor-card{grid-column:span 1;max-height:680px;overflow:auto}
+.admin-inline-language{margin:0!important;padding:12px!important;border:1px solid #30445f!important;background:#0a1424!important;border-radius:9px!important;display:grid;gap:8px}
+.admin-inline-language>b{color:#71def0}
+.admin-inline-language label{display:grid;gap:4px;color:#9fb0c8;font-size:.78rem}
+.admin-inline-language input,.admin-inline-language textarea{width:100%;padding:8px 9px;background:#fff;color:#111;border:0;border-radius:6px;font:inherit;resize:vertical}
+.admin-dashboard .admin-save-copy{background:#0e6b7d;border-color:#49d9ef;font-weight:800}
+
+/* PATCH 05: 관리자 화면을 간단한 CMS처럼 사용하도록 기록 영역을 압축합니다. */
+.admin-compact-section{scroll-margin-top:92px}
+.admin-list-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.admin-list-head h2,.admin-list-head h3{margin:0 0 3px}
+.admin-list-head p{margin:0;color:#9fb0c8}
+.admin-list-head>span{padding:5px 9px;border:1px solid #3f5879;border-radius:999px;color:#8ee9f6;font-size:.78rem;white-space:nowrap}
+.admin-scroll-list{max-height:310px;overflow:auto;border:1px solid #2d405c;border-radius:10px;background:#0c1626}
+.admin-scroll-list table{margin:0}
+.admin-scroll-gallery{max-height:320px;overflow:auto;padding:10px;border:1px solid #2d405c;border-radius:10px;background:#0c1626}
+.admin-character-master{scroll-margin-top:92px}
+.admin-master-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.admin-master-cards article{position:relative;min-width:0;padding:12px;border:1px solid #344a68;border-radius:10px;background:#0c1626;display:grid;gap:4px}
+.admin-master-cards b{color:#fff}.admin-master-cards span{color:#78deee;font-size:.82rem}.admin-master-cards small{color:#a9b7ca;line-height:1.35}.admin-master-cards em{font-style:normal;font-size:.7rem;color:#c7d7ea}
+@media(max-width:1050px){.admin-master-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.admin-master-cards{grid-template-columns:1fr}.admin-scroll-list{max-height:260px}.admin-dashboard{padding:14px}.admin-dashboard .admin-nav{gap:7px}.admin-dashboard .admin-nav button{padding:9px 10px;font-size:.78rem}}
+
+/* PATCH06: 기본 캐릭터를 관리자 카드에서 바로 확인/교체 */
+.admin-character-preview{width:100%;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#08111f;display:grid;place-items:center;margin-bottom:8px}
+.admin-character-preview img{width:100%;height:100%;object-fit:contain;display:block}
+.admin-character-empty{color:#7d8ca3;font-size:.78rem}
+.admin-character-upload{margin-top:8px;min-height:34px;display:flex;align-items:center;justify-content:center;border:1px solid #3d587a;border-radius:7px;background:#14233a;color:#fff;font-size:.78rem;font-weight:700;cursor:pointer}
+.admin-character-upload:hover{background:#203858}
+
+/* PATCH08: 캐릭터 원본 이미지의 비율/여백이 달라도 관리자 카드 배치를 동일하게 유지 */
+.admin-character-preview{
+  width:100%;
+  aspect-ratio:4 / 5;
+  height:auto;
+  overflow:hidden;
+  background:#08111f;
+}
+.admin-character-preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  display:block;
+}
+
+/* 화면별 통합 관리자: 기존 API와 기존 편집 로직을 유지하며 선택한 관리 영역만 표시 */
+.admin-dashboard [data-admin-panel][data-visible="false"] {display:none!important;}
+.admin-dashboard .admin-nav [aria-current="page"] {background:#116a7d;border-color:#5ee9ff;box-shadow:inset 0 -2px #5ee9ff;}
+.admin-workspace{margin-top:16px;}
+.admin-workspace-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px;}
+.admin-workspace-head h2{margin:0 0 8px}.admin-workspace-head p{margin:0;color:#b4c5df;}
+.admin-workspace-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px;align-items:start;}
+.admin-workspace-text,.admin-workspace-assets{display:grid;gap:12px;min-width:0;padding:18px;background:#0d1829;border:1px solid #365273;border-radius:12px;}
+.admin-workspace-text h3,.admin-workspace-assets h3{margin:0 0 8px;}
+.admin-workspace-fieldbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.admin-workspace-fieldbar label{display:flex;gap:8px;align-items:center;}
+.admin-workspace-field,.admin-workspace-upload label,.admin-workspace-numbers label,.admin-card-edit{display:grid;gap:5px;font-size:.83rem;color:#bfd0e7;font-weight:700;}
+.admin-workspace-field input,.admin-workspace-field select,.admin-workspace-field textarea,.admin-workspace-upload input,.admin-workspace-upload select,.admin-workspace-numbers input,.admin-card-edit input{width:100%;max-width:100%;border:1px solid #9cafc5;border-radius:6px;padding:9px;color:#101827;background:#fff;font:inherit;}
+.admin-workspace-field textarea{resize:vertical;}
+.admin-workspace-numbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.admin-workspace-preview{min-height:90px;background:#070e1c;border:1px solid #394960;border-radius:10px;overflow:hidden;display:grid;gap:6px;padding:10px;place-items:center;}
+.admin-workspace-preview img,.admin-workspace-preview video{max-height:290px;max-width:100%;width:100%;object-fit:contain;}
+.admin-workspace-upload{display:grid;gap:12px;padding:14px;background:#111e32;border:1px solid #314a69;border-radius:10px;}
+.admin-workspace-registered{display:grid;gap:6px}.admin-workspace-registered h4{margin:0}.admin-workspace-registered p{margin:0;padding:8px;border-bottom:1px solid #3d536f;overflow-wrap:anywhere;}
+.admin-workspace-hint{padding:12px;border-left:3px solid #74e4f7;color:#c6d7ec;background:#132b42;}
+.admin-card-edit input{font-size:.78rem;padding:7px;}.admin-card-check{display:flex;align-items:center;gap:7px;font-size:.78rem;color:#cde4f5;}.admin-card-check input{width:auto;}
+.admin-character-master>.admin-save-copy{margin-top:16px;}
+@media(max-width:850px){.admin-workspace-grid{grid-template-columns:1fr;}}
+.admin-intro-poster-management{border-top:1px solid #354968;display:grid;gap:9px;padding-top:12px;}
+.admin-intro-poster-management img{display:block;width:100%;max-height:155px;object-fit:contain;background:#070e18;}
+
+.admin-save-notice{padding:10px 14px;border:1px solid #53ccbf;border-radius:8px;background:#0e3c39;color:#e0fff9;}
+
+/* CMS V9: artist/stage catalogs and operation variants */
+.admin-cms-catalog{display:none;padding:28px;margin:20px 0;background:#0d1422;border:1px solid #293652}
+.admin-cms-catalog[data-visible="true"]{display:block}
+.admin-cms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:18px 0}
+.admin-cms-card{padding:16px;border:1px solid #2b3853;background:#0a101c;display:grid;gap:10px}
+.admin-cms-card>label,.admin-cms-files label{display:grid;gap:5px;font-size:.78rem;color:#b8c4d8}
+.admin-cms-card input,.admin-cms-card textarea,.admin-cms-card select{width:100%;box-sizing:border-box;padding:9px;border:1px solid #34425f;background:#080d17;color:#fff}
+.admin-cms-preview{height:190px;display:grid;place-items:center;overflow:hidden;background:#070b13;border:1px solid #26334b;color:#71809b;font-weight:800}
+.admin-cms-preview img{width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.admin-cms-files{display:grid;gap:8px;padding-top:8px;border-top:1px solid #24314a}
+.admin-cms-files input[type="file"]{font-size:.72rem}
+.admin-cms-card .danger{background:#35131d;border:1px solid #6d2739;color:#ffbcc8}
+.admin-cms-subsection{margin:18px 0;padding:14px;border:1px solid #2a3853;background:#090f1a}
+.admin-cms-subsection h4{margin:0 0 8px}.admin-cms-subsection fieldset{margin:10px 0;padding:10px;border:1px solid #2b3953;display:grid;gap:8px}
+.admin-cms-subsection fieldset label{display:grid;gap:5px}
+.admin-variant-row{display:grid;grid-template-columns:minmax(120px,1fr) 90px auto 90px minmax(130px,1fr);gap:8px;align-items:center;margin:8px 0}
+.admin-variant-row label{display:flex;gap:6px;align-items:center}.admin-variant-row label input{max-width:90px}
+@media(max-width:760px){.admin-cms-grid{grid-template-columns:1fr}.admin-variant-row{grid-template-columns:1fr 1fr}.admin-variant-row span{display:none}}
+
+.admin-subsection-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.admin-subsection-head h4{margin:0 0 4px}.admin-subsection-head p{margin:0;color:#93a2bd}
+
+/* CMS V10: 일정 / 오디오 / 데이터 관리 */
+.admin-schedule-row{display:grid;grid-template-columns:110px 1fr 2fr auto;gap:8px;align-items:center;margin:8px 0}.admin-schedule-row input{min-width:0}
+.admin-incident-options{display:grid;gap:8px;margin-top:12px}.admin-incident-option-row{display:grid;grid-template-columns:28px 1.2fr 1fr 1.2fr;gap:8px;align-items:center}.admin-incident-option-row span{font-weight:800;text-align:center}
+.admin-cms-current-paths{display:grid;gap:8px;margin:10px 0}.admin-cms-current-paths input{font-size:12px}
+.admin-audio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:16px 0}.admin-audio-card{border:1px solid #dfe3ee;border-radius:16px;padding:16px;background:#fff;display:grid;gap:10px}.admin-audio-card h3{margin:0 0 4px}.admin-audio-card label{display:grid;gap:5px}.admin-audio-card input[type="range"]{width:100%}
+.admin-data-actions,.admin-inline-actions{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.admin-retention-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:16px 0}.admin-retention-grid label{display:grid;gap:6px}.admin-cleanup-preview{border:1px solid #f0c9c9;background:#fff8f8;border-radius:14px;padding:16px;margin-top:16px}.admin-cleanup-preview p{margin:6px 0}
+@media(max-width:760px){.admin-schedule-row{grid-template-columns:1fr}.admin-incident-option-row{grid-template-columns:28px 1fr}.admin-incident-option-row input{grid-column:2}}
+
+
+/* V11: 관리자 화면을 항목별 카드 중심으로 단순화 */
+.admin-plan-manager{display:grid;gap:14px}
+.admin-plan-card{display:grid;gap:14px;padding:16px;border:1px solid #3b5271;border-radius:12px;background:#0d192a}
+.admin-plan-card-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding-bottom:10px;border-bottom:1px solid #2e405b}
+.admin-plan-card-head strong{font-size:1.05rem;color:#fff}.admin-plan-card-head span{color:#7de0ef;font-weight:800}
+.admin-plan-basic{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}.admin-plan-basic label{display:grid;gap:5px;color:#bfd0e7;font-size:.82rem;font-weight:700}
+.admin-plan-basic input,.admin-plan-schedule input{width:100%;box-sizing:border-box;padding:9px;border:1px solid #566b87;border-radius:6px;background:#fff;color:#101827}
+.admin-plan-schedule{display:grid;gap:8px}.admin-plan-schedule>b{color:#fff}
+.admin-direct-media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:12px}
+.admin-direct-media-card{display:grid;gap:10px;padding:14px;border:1px solid #344a68;border-radius:10px;background:#0d1928}
+.admin-direct-media-title{display:flex;justify-content:space-between;gap:10px;align-items:center}.admin-direct-media-title span{font-size:.72rem;color:#7de0ef}
+.admin-direct-media-preview{height:180px;display:grid;place-items:center;overflow:hidden;background:#050a12;border:1px solid #283950;border-radius:8px}.admin-direct-media-preview video{width:100%;height:100%;object-fit:contain}.admin-direct-media-preview p{margin:0;color:#91a1b8;text-align:center;padding:12px}
+@media(max-width:760px){.admin-plan-basic,.admin-direct-media-grid{grid-template-columns:1fr}.admin-plan-card-head{align-items:flex-start;flex-direction:column}}
+
+
+/* V12: 관리자 이미지 큰 미리보기 */
+.admin-preview-clickable{position:relative;cursor:zoom-in;}
+.admin-preview-clickable em{position:absolute;right:8px;bottom:8px;padding:5px 8px;border-radius:999px;background:#050a12dd;border:1px solid #ffffff44;color:#fff;font-style:normal;font-size:.68rem;pointer-events:none}
+.admin-image-modal{position:fixed;inset:0;z-index:500;background:#03070de8;display:grid;place-items:center;padding:24px;backdrop-filter:blur(10px)}
+.admin-image-dialog{position:relative;width:min(900px,94vw);height:min(86vh,820px);display:grid;grid-template-rows:minmax(0,1fr) auto;gap:10px;padding:18px;background:#09111d;border:1px solid #50627d;border-radius:16px;box-shadow:0 30px 90px #000b}
+.admin-image-dialog img{width:100%;height:100%;min-height:0;object-fit:contain;object-position:center;background:#050a12}
+.admin-image-dialog strong{text-align:center;color:#fff;font-size:1.05rem}
+.admin-image-dialog button{position:absolute;right:10px;top:8px;z-index:2;width:40px;height:40px;border-radius:50%;font-size:1.5rem}
+
+/* 관리자에서 실제 적용 자료를 확인하는 미리보기입니다. 사용자 화면에는 적용되지 않습니다. */
+.admin-step-asset{min-width:0;display:grid;gap:8px;border:1px solid #ffffff25;border-radius:8px;padding:10px;background:#0e1626}
+.admin-step-asset>img,.admin-step-asset>video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#070b14}
+.admin-linked-previews{display:grid;gap:12px;margin:12px 0}
+.admin-linked-previews>div{display:grid;gap:8px}
+.admin-linked-previews video,.admin-background-editor video{display:block;width:100%;max-height:250px;object-fit:contain;background:#070b14}
+.admin-audio-listen{display:grid;gap:8px;margin-bottom:12px}
+.admin-audio-listen audio{width:100%;max-width:100%}
+.admin-background-editor{display:grid;gap:12px;margin-bottom:16px}
+.admin-save-scope-note{padding:10px 14px;border:1px solid #ffffff25;color:#becce0;font-size:.85rem;line-height:1.5}
+
+.admin-audio-cms .admin-audio-card{background:#101b2e;color:#eef3ff;border-color:#3d587a;min-width:0}
+.admin-audio-cms .admin-audio-card small,.admin-audio-cms .admin-audio-card p{color:#c5d3e9}
+.admin-audio-cms .admin-audio-card input:not([type="checkbox"]):not([type="range"]):not([type="file"]),.admin-audio-cms textarea{background:#071222;color:#fff;border:1px solid #58708f;width:100%;box-sizing:border-box;padding:8px}
+.admin-audio-languages{display:grid;gap:16px}.admin-audio-languages>div{display:grid;gap:9px;border-top:1px solid #3d587a;padding-top:14px;min-width:0}
+.admin-audio-cms audio{width:100%}.admin-audio-cms input[type="file"]{display:block;width:100%;color:#fff;margin-top:8px}.admin-audio-cms .admin-character-upload{padding:10px;display:grid}
+.admin-audio-cms{color:#eef3ff}.admin-audio-cms>p{color:#c5d3e9}
+
+.admin-audio-notice{padding:12px;border:1px solid #63839e;border-radius:8px;overflow-wrap:anywhere}.admin-audio-notice.error{color:#ffb8b8!important;border-color:#e77c7c}.admin-audio-notice.success{color:#97efc3!important;border-color:#54ad84}

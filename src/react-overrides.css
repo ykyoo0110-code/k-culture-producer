@@ -1,0 +1,1210 @@
+/* React 컴포넌트로 변경하면서 필요한 작은 스타일 보정 */
+.brand {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.header-tools { display: flex; align-items: center; gap: 8px; }
+.admin-button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ffffff35;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+.admin-button:hover { border-color: var(--pink); color: var(--pink); }
+
+.intro-copy > .actions {
+  justify-content: flex-start;
+}
+
+.intro-copy > .actions .primary {
+  align-self: flex-start;
+}
+
+/* V3 프로듀서 프로필 */
+.profile-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.profile-form,
+.producer-pass,
+.souvenir-card,
+.news-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.profile-form { padding: 28px; }
+.field-label { display: block; margin-bottom: 10px; font-weight: 800; }
+.text-input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  background: #0d1323;
+  border: 1px solid #3a4562;
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  outline: none;
+}
+.text-input:focus { border-color: var(--pink); box-shadow: 0 0 0 3px #ff4fa31f; }
+.profile-modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+.profile-mode {
+  min-height: 170px;
+  padding: 18px;
+  text-align: left;
+  background: #0d1323;
+  border: 1px solid #3a4562;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.profile-mode > span { color: var(--pink); font-size: 1.6rem; }
+.profile-mode small { color: var(--muted); line-height: 1.55; }
+.profile-mode.selected { border-color: var(--pink); background: #ff4fa318; }
+.upload-panel { margin-top: 16px; padding: 18px; border: 1px dashed #4b5675; }
+.upload-button { display: inline-block; padding: 11px 17px; background: var(--pink); color: #fff; font-weight: 800; cursor: pointer; }
+.consent-row { display: flex; gap: 10px; align-items: flex-start; margin-top: 15px; color: #dce2f1; line-height: 1.55; }
+.consent-row input { margin-top: 5px; accent-color: var(--pink); }
+.privacy-note { color: var(--muted); font-size: .82rem; line-height: 1.6; }
+.form-error { color: #ff8b9c; font-weight: 700; }
+
+.producer-pass {
+  padding: 26px;
+  background: linear-gradient(145deg, #1c2744, #101729);
+  display: grid;
+  gap: 14px;
+}
+.pass-label { color: var(--cyan); font-size: .75rem; font-weight: 900; letter-spacing: .18em; }
+.pass-photo { aspect-ratio: 3 / 4; overflow: hidden; border: 1px solid #ffffff2b; background:#070b14; display:flex; align-items:center; justify-content:center; }
+.pass-photo img { width: 100%; height: 100%; object-fit: contain; object-position:center center; display:block; }
+.pass-photo.solo img { object-position: center; }
+.producer-pass > div:not(.pass-photo) { display: grid; gap: 4px; padding-top: 11px; border-top: 1px solid var(--line); }
+.producer-pass small { color: var(--muted); font-size: .68rem; letter-spacing: .14em; }
+.producer-pass strong { font-size: 1rem; }
+
+/* V3 개인 기념사진과 기사 */
+.generated-results { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 18px; margin-top: 22px; }
+.souvenir-card { overflow: hidden; }
+.souvenir-visual { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #090e1b; }
+.souvenir-stage { width: 100%; height: 100%; object-fit: cover; }
+.producer-overlay {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 42%;
+  padding: 8px;
+  background: #080d1be6;
+  border: 1px solid #ffffff4a;
+}
+.producer-overlay img { width: 100%; aspect-ratio: 3 / 4; object-fit: contain; object-position:center; background:#070b14; display: block; }
+.producer-overlay span { display: block; margin-top: 7px; color: #fff; font-size: .7rem; font-weight: 800; }
+.ai-badge { position: absolute; top: 15px; right: 15px; padding: 7px 10px; background: #080d1bd9; border: 1px solid var(--cyan); color: var(--cyan); font-size: .65rem; letter-spacing: .1em; }
+.souvenir-copy { padding: 22px; }
+.souvenir-copy span { color: var(--pink); font-size: .7rem; letter-spacing: .16em; }
+.souvenir-copy h3 { font-size: 1.45rem; margin: 10px 0; }
+.souvenir-copy p { color: var(--muted); line-height: 1.65; }
+
+.news-card { padding: clamp(24px, 4vw, 48px); background: #f7f8fc; color: #111728; }
+.news-masthead { display: flex; justify-content: space-between; gap: 15px; border-bottom: 3px solid #111728; padding-bottom: 13px; margin-bottom: 28px; }
+.news-masthead b { letter-spacing: .12em; }
+.news-masthead span { color: #d72578; font-size: .72rem; font-weight: 800; }
+.news-card h2 { font-size: clamp(1.8rem, 3vw, 3.2rem); line-height: 1.15; letter-spacing: -.035em; margin: 10px 0 18px; }
+.news-card p { line-height: 1.85; color: #3c455b; }
+.news-card .news-lead { font-size: 1.08rem; font-weight: 700; color: #20283c; }
+.news-card blockquote { margin: 24px 0; padding: 18px 20px; border-left: 4px solid #d72578; background: #eceff6; font-weight: 800; line-height: 1.7; }
+.news-card > small { display: block; color: #687188; line-height: 1.55; }
+.share-actions { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; margin-top: 24px; }
+.share-actions button { border: 1px solid #1a2237; background: #111728; color: #fff; padding: 11px 15px; font-weight: 800; cursor: pointer; }
+.share-actions button:hover { background: #d72578; border-color: #d72578; }
+.share-actions span { color: #17795a; font-size: .85rem; }
+
+.cert-photo { width: 150px; height: 150px; margin: 20px auto 12px; overflow: hidden; border: 5px solid #fff; box-shadow: 0 8px 25px #16203c26; background:#f3f5fa; display:grid; place-items:center; }
+.cert-photo img { width: 100%; height: 100%; object-fit: contain; object-position:center center; display:block; }
+.cert-name { margin: 8px 0 0; color: #566079; font-size: .8rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+
+/* 인증서는 항상 현재 화면 안에서 확인할 수 있게 제한합니다. */
+.certificate { max-height: calc(100svh - 32px); overflow-y: auto; }
+
+/* 관리자 기본 설정 */
+.admin-panel {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: calc(100svh - 32px);
+  overflow-y: auto;
+  padding: 34px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 80px #000a;
+}
+.admin-panel h2 { margin: 8px 0; font-size: 2rem; }
+.admin-help { margin: 0 0 22px; color: var(--muted); }
+.admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.admin-field { display: grid; gap: 7px; }
+.admin-field span { color: #dce2f1; font-size: .82rem; font-weight: 800; }
+.admin-field input,
+.admin-field select {
+  min-height: 46px;
+  padding: 0 13px;
+  border: 1px solid #3a4562;
+  background: #0d1323;
+  color: #fff;
+  font: inherit;
+}
+.admin-field input:focus,
+.admin-field select:focus { outline: 0; border-color: var(--pink); }
+.admin-section-title {
+  margin: 30px 0 14px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--cyan);
+  font-size: 1rem;
+  letter-spacing: .08em;
+}
+.admin-language-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.admin-language-grid section {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: #0d1323;
+}
+.admin-language-grid section > b { color: var(--pink); }
+.admin-video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; }
+.admin-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; }
+
+/* 결과 첫 화면에서 인증서 버튼이 상세 기사보다 먼저 보입니다. */
+.result > .actions { margin: 14px 0 24px; }
+
+@media (min-width: 769px) and (max-height: 800px) {
+  .certificate { padding: 22px 28px; }
+  .certificate h2 { margin: 8px 0; font-size: 1.55rem; }
+  .cert-photo { width: 120px; height: 120px; margin: 10px auto 7px; }
+  .certificate h3 { margin: 8px 0; font-size: 1.25rem; }
+  .certificate p { margin: 7px 0; line-height: 1.45; }
+  .certificate strong { margin: 12px; }
+}
+
+/*
+ * 데스크톱·노트북 한 화면 맞춤
+ * 높이가 낮은 노트북에서도 선택 버튼과 이전/다음 버튼이
+ * 화면 아래로 밀리지 않도록 주요 화면의 여백과 카드 높이를 줄입니다.
+ * 결과 화면은 기사와 인증서 내용이 많아 기존처럼 스크롤을 사용합니다.
+ */
+@media (min-width: 769px) {
+  .screen:not(.intro):not(.result) {
+    /* 화면 전체를 세로 상자처럼 사용해 버튼을 자연스럽게 아래에 배치합니다. */
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    padding: 82px clamp(24px, 4vw, 64px) 14px;
+    overflow-x: hidden;
+  }
+
+  /* 버튼을 고정하지 않고 콘텐츠 다음에 배치해 영상과 겹치지 않게 합니다. */
+  .screen:not(.intro):not(.result) > .actions {
+    position: static;
+    flex-shrink: 0;
+    margin-top: auto;
+    padding-top: 12px;
+    background: transparent;
+  }
+
+  .section-heading { margin-bottom: 14px; }
+  .section-heading h2,
+  .incident-copy h2,
+  .scene-note h2 { margin: 6px 0 10px; font-size: clamp(1.75rem, 3vw, 2.8rem); }
+  .section-heading > p:last-child,
+  .incident-copy > p:last-child,
+  .scene-note > p { margin: 0; font-size: .9rem; line-height: 1.5; }
+
+  .status-strip { margin-bottom: 10px; }
+  .status-strip div { min-width: 105px; padding: 6px 12px; }
+  .actions { margin-top: 12px; }
+  .primary,
+  .secondary { min-height: 44px; padding: 0 18px; }
+
+  .setup-grid { gap: 10px; }
+  .control-card { padding: 14px 18px; }
+  .control-card h3 { margin-bottom: 10px; }
+  .choices button { padding: 10px; }
+
+  .profile-layout { gap: 12px; }
+  .profile-layout { grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); }
+  .profile-form,
+  .producer-pass { padding: 16px; }
+  .text-input { min-height: 44px; }
+  .profile-modes { margin-top: 12px; }
+  .profile-mode { min-height: 112px; padding: 12px; }
+  .profile-mode > span { font-size: 1.25rem; }
+  .profile-mode small { font-size: .78rem; }
+  .pass-photo { max-height: 320px; }
+  .producer-pass { gap: 8px; }
+  .producer-pass > div:not(.pass-photo) { padding-top: 6px; }
+
+  .plan-layout,
+  .split-stage,
+  .video-stage,
+  .video-stage.reverse { gap: 14px; }
+  .plan-layout { grid-template-columns: 1.45fr .8fr; }
+  .split-stage { grid-template-columns: 1fr 1.05fr; }
+  .video-stage { grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); }
+  .video-stage.reverse { grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); }
+  .timeline-card,
+  .brief-card,
+  .scene-note { padding: 16px 20px; }
+  .timeline-card li { padding: 7px 0; }
+  .brief-card div { padding: 10px 0; }
+
+  /* 영상은 크기가 달라져도 원본 16:9 비율을 절대 바꾸지 않습니다. */
+  .compact,
+  .program-media {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: none;
+  }
+  .choice-title { margin: 12px 0 9px; }
+  .response-grid { gap: 8px; }
+  .response { min-height: 112px; padding: 13px; }
+  .response .icon { font-size: 1.45rem; }
+  .response .num { top: 10px; right: 10px; }
+  .scene-note ul { margin-top: 10px; }
+  .scene-note li { padding: 7px 0; }
+  .final-options { gap: 6px; margin-top: 10px; }
+  .final-options button { padding: 9px 11px; }
+}
+
+@media (max-width: 768px) {
+  .profile-layout,
+  .generated-results { grid-template-columns: 1fr; }
+  .producer-pass { grid-template-columns: 1fr 1fr; }
+  .pass-photo { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  .profile-modes,
+  .producer-pass { grid-template-columns: 1fr; }
+  .profile-mode { min-height: 130px; }
+  .news-card { padding: 22px; }
+  .news-masthead { align-items: flex-start; flex-direction: column; }
+  .step-indicator { display: none; }
+  .admin-grid { grid-template-columns: 1fr; }
+  .admin-language-grid,
+  .admin-video-grid { grid-template-columns: 1fr; }
+  .admin-panel { padding: 26px 18px; }
+  .admin-actions { flex-direction: column-reverse; }
+  .admin-actions button { width: 100%; }
+}
+
+
+/* 화면 글자 크기 조절: A− / 100% / A+ */
+.font-controls {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ffffff35;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #ffffff08;
+}
+.font-controls button {
+  min-width: 36px;
+  height: 34px;
+  padding: 0 9px;
+  border: 0;
+  border-right: 1px solid #ffffff22;
+  background: transparent;
+  color: #fff;
+  font-size: .74rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.font-controls button:last-child { border-right: 0; }
+.font-controls button:hover:not(:disabled) { color: var(--pink); background: #ffffff0d; }
+.font-controls button:disabled { opacity: .35; cursor: default; }
+.font-controls .font-reset { min-width: 48px; color: var(--cyan); font-size: .68rem; }
+
+@media (max-width: 760px) {
+  .font-controls .font-reset { display: none; }
+  .font-controls button { min-width: 32px; padding: 0 7px; }
+  .header-tools { gap: 5px; }
+  .admin-button { width: 34px; height: 34px; }
+}
+
+@media (max-width: 520px) {
+  /* 아주 좁은 휴대폰에서는 진행률보다 핵심 조작 버튼 공간을 우선합니다. */
+  .font-controls { display: none; }
+}
+
+/* ===== SYSTEM V4 : CONNECT WALL ===== */
+.system-actions { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 28px; }
+.system-actions button { border:1px solid #38415b; background:#101728; color:#fff; padding:11px 15px; font:inherit; font-weight:800; cursor:pointer; }
+.system-actions button:hover { border-color:var(--cyan); color:var(--cyan); }
+.system-actions small { align-self:center; color:var(--muted); }
+.connect-wall { display:grid; grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr); gap:28px; margin:52px 0 10px; padding:30px; border:1px solid #26314b; background:linear-gradient(145deg,#080d18,#0d1424); overflow:hidden; }
+.connect-wall-copy h2 { font-size:clamp(1.8rem,3vw,3.1rem); margin:8px 0 12px; line-height:1.1; }
+.connect-wall-copy > p { color:#b7c1d8; line-height:1.7; }
+.connect-form { display:grid; gap:10px; margin-top:20px; }
+.connect-form input,.connect-form textarea { width:100%; border:1px solid #33405c; background:#070c16; color:#fff; padding:12px 14px; font:inherit; box-sizing:border-box; }
+.connect-form textarea { min-height:96px; resize:vertical; }
+.connect-form button { justify-self:start; border:0; background:var(--pink); color:#fff; padding:12px 20px; font-weight:900; cursor:pointer; }
+.connect-form span { color:var(--cyan); font-size:.85rem; }
+.donga-billboard { position:relative; min-height:390px; background:radial-gradient(circle at 50% 15%,#35415e 0,#131a2b 28%,#050913 72%); border:1px solid #313d58; overflow:hidden; }
+.billboard-building { height:90px; display:flex; justify-content:space-between; align-items:center; padding:0 24px; background:#090d16; border-bottom:1px solid #27334c; letter-spacing:.17em; }
+.billboard-building span { font-weight:900; }
+.billboard-building small { color:var(--cyan); }
+.billboard-screen { position:absolute; left:8%; right:8%; top:125px; height:175px; overflow:hidden; border:4px solid #202a40; background:#03060c; box-shadow:0 0 40px #12d6ff33; }
+.billboard-track { display:flex; width:max-content; height:100%; align-items:center; gap:54px; padding-left:40px; animation:connectTicker 32s linear infinite; }
+.billboard-track article { min-width:260px; max-width:360px; }
+.billboard-track b { color:var(--cyan); font-size:.72rem; letter-spacing:.16em; }
+.billboard-track p { margin:10px 0 0; font-size:1.25rem; font-weight:800; line-height:1.45; }
+.billboard-caption { position:absolute; left:0; right:0; bottom:16px; margin:0; text-align:center; color:#6f7b96; font-size:.66rem; letter-spacing:.13em; }
+@keyframes connectTicker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+@media (max-width:850px) { .connect-wall { grid-template-columns:1fr; padding:20px; } .donga-billboard { min-height:340px; } }
+
+
+/* V5 CHARACTER START: 기본/프롬프트/사진 3가지 진입 방식을 한 화면에서 관리합니다. */
+.character-library,.character-panel{margin-top:16px;padding:16px;border:1px solid #33405c;background:#0a101e}
+.character-panel-title{margin:0 0 12px;font-weight:900;color:#eef3ff}
+.character-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.character-card{border:1px solid #34405c;background:#0b1221;color:#fff;padding:8px;cursor:pointer;display:grid;gap:7px;text-align:center}
+.character-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px}
+.character-card b{font-size:.68rem;line-height:1.35}
+.character-card:hover,.character-card.selected{border-color:var(--pink);background:#ff4fa312;transform:translateY(-2px)}
+.character-library>small,.character-panel>small,.upload-panel>small{display:block;margin-top:10px;color:var(--muted);line-height:1.55}
+.character-prompt{min-height:92px;resize:vertical;margin-top:7px}
+.character-generate{margin-top:10px;border:1px solid var(--cyan);background:#57dbff14;color:#bcefff;padding:10px 14px;font-weight:900;cursor:pointer}
+.character-generate:disabled{opacity:.5;cursor:wait}
+@media(max-width:900px){.character-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.character-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.ai-status{margin-top:14px;padding:10px 12px;border:1px solid #394663;background:#0a101e;display:flex;gap:10px;align-items:center;justify-content:space-between;font-size:.72rem;letter-spacing:.06em}.ai-status b{color:#fff}.ai-status span{color:#aeb8cf;text-align:right}.ai-status.ready{border-color:#4ccf9a55}.ai-status.ready span{color:#7ce7bc}.ai-status.offline{border-color:#ff8b9c66}.ai-status.offline span{color:#ff9eac}
+
+
+/* PATCH16 souvenir + billboard photo integration */
+.souvenir-shot-frame{position:absolute;inset:18px 18px 60px 18px;border:10px solid #fff;box-shadow:0 18px 32px #00000045;overflow:hidden;background:#101827;}
+.souvenir-shot-bg{width:100%;height:100%;object-fit:cover;filter:saturate(1.05);}
+.souvenir-shot-character{position:absolute;right:4%;bottom:0;width:42%;height:88%;display:flex;align-items:flex-end;justify-content:center;}
+.souvenir-shot-character img{max-width:100%;max-height:100%;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 16px 18px rgba(0,0,0,.35));}
+.souvenir-shot-artist{position:absolute;left:18px;top:18px;padding:10px 12px;background:#09111ed9;color:#fff;border:1px solid #ffffff52;display:grid;gap:2px;}
+.souvenir-shot-artist span{font-size:.62rem;letter-spacing:.18em;color:var(--cyan);}
+.souvenir-shot-artist strong{font-size:1rem;line-height:1.2;}
+.souvenir-shot-caption{position:absolute;left:0;right:0;bottom:0;padding:14px 18px;background:linear-gradient(180deg,transparent,#050913d9 44%,#050913f1);display:grid;gap:3px;}
+.souvenir-shot-caption b{font-size:1.05rem;color:#fff;}
+.souvenir-shot-caption small{color:#c0cae3;letter-spacing:.14em;}
+
+.billboard-screen.feature{display:grid;grid-template-columns:minmax(0,.92fr) minmax(220px,.78fr);gap:16px;align-items:stretch;padding:16px;height:185px;}
+.billboard-feature-photo{position:relative;overflow:hidden;border:2px solid #25324b;background:#0c1322;}
+.billboard-feature-bg{width:100%;height:100%;object-fit:cover;opacity:.96;}
+.billboard-feature-char{position:absolute;right:2%;bottom:0;width:34%;height:90%;display:flex;align-items:flex-end;justify-content:center;}
+.billboard-feature-char img{max-width:100%;max-height:100%;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45));}
+.billboard-feature-copy{position:absolute;left:14px;bottom:14px;padding:10px 12px;background:#09111ed9;border:1px solid #ffffff44;display:grid;gap:3px;max-width:58%;}
+.billboard-feature-copy small{color:#7fe7ff;font-size:.62rem;letter-spacing:.16em;}
+.billboard-feature-copy b{color:#fff;font-size:1rem;line-height:1.15;}
+.billboard-feature-copy span{color:#c6d0e6;font-size:.75rem;}
+.billboard-feature-message{border:2px solid #25324b;background:linear-gradient(160deg,#0a101b,#11192a);padding:18px 18px 16px;display:flex;flex-direction:column;justify-content:center;}
+.billboard-feature-message small{color:#7fe7ff;font-size:.68rem;letter-spacing:.15em;}
+.billboard-feature-message p{margin:10px 0 0;font-size:1.35rem;font-weight:900;line-height:1.4;color:#fff;}
+.billboard-ticker-shell{position:absolute;left:8%;right:8%;top:323px;height:72px;overflow:hidden;border:3px solid #202a40;background:#03060c;box-shadow:0 0 25px #12d6ff1f;}
+.billboard-track{height:100%;}
+.billboard-track article{min-width:280px;}
+.billboard-track p{font-size:1rem;}
+.billboard-caption{bottom:14px;}
+@media (max-width:850px){.billboard-screen.feature{grid-template-columns:1fr;height:270px}.billboard-feature-message p{font-size:1.05rem}.billboard-ticker-shell{top:410px}.donga-billboard{min-height:520px}}
+@media (max-width:620px){.souvenir-shot-frame{inset:12px 12px 58px 12px;border-width:7px}.souvenir-shot-character{width:48%}.billboard-feature-copy{max-width:65%}}
+
+/* PATCH18: 모바일 기본 캐릭터 5개를 가로 한 줄에 모두 노출 */
+.character-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(3px, .9vw, 9px); }
+.character-card { min-width: 0; padding: clamp(3px, .65vw, 8px); align-content: start; }
+.character-card img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: contain; object-position: center top; background: #080d18; }
+.character-card b,.character-card small { overflow-wrap: anywhere; }
+@media (max-width: 900px) { .character-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .character-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+  .character-library { padding: 10px 7px; }
+  .character-card { padding: 3px 2px 5px; gap: 4px; }
+  .character-card b { font-size: clamp(.52rem, 1.9vw, .72rem); line-height: 1.15; }
+  .character-card small { font-size: clamp(.48rem, 1.7vw, .65rem); line-height: 1.1; }
+}
+/* 프로듀서 패스는 전체 사진이 보이게 contain, 세로 공간이 부족해도 위쪽부터 노출 */
+.pass-photo { width: 100%; min-width: 0; min-height: 0; aspect-ratio: 3 / 4; max-height: min(46svh, 430px); }
+.pass-photo img { width: 100%; height: 100%; object-fit: contain; object-position: center top; }
+@media (max-width: 768px) {
+  .profile-layout { grid-template-columns: minmax(0, 1fr); }
+  .producer-pass { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 12px; gap: 8px; }
+  .producer-pass .pass-label { grid-column: 1 / -1; }
+  .producer-pass .pass-photo { grid-column: 1 / -1; width: min(100%, 260px); justify-self: center; aspect-ratio: 3 / 4; max-height: min(39svh, 320px); }
+  .producer-pass > div:not(.pass-photo) { min-width: 0; overflow-wrap: anywhere; }
+  .producer-pass strong { font-size: clamp(.72rem, 2.7vw, 1rem); }
+}
+@media (max-width: 390px) {
+  .producer-pass .pass-photo { max-height: min(35svh, 270px); }
+}
+/* 기념사진 / 전광판도 상단 얼굴이 잘리지 않게 표시 */
+.souvenir-shot-character img, .billboard-feature-char img { object-position: center top; }
+.souvenir-shot-character, .billboard-feature-char { align-items: flex-start; }
+.souvenir-stage, .billboard-feature-bg { object-position: center top; }
+.cert-photo img { object-position: center center; }
+
+/* PATCH19: 완성 AI 사진은 별도 합성 프레임 없이 한 장만 표시합니다. */
+.souvenir-visual-v19{aspect-ratio: 16/9;background:#070b14;overflow:hidden;position:relative;}
+.souvenir-visual-v19>img{display:block;width:100%;height:100%;object-fit:contain;}
+.souvenir-pending{position:relative;width:100%;height:100%;display:flex;justify-content:center;align-items:center;}
+.souvenir-pending img{width:100%;height:100%;object-fit:cover;filter:brightness(.45);}
+.souvenir-pending span{position:absolute;z-index:1;color:#fff;font-weight:900;padding:12px 16px;border:1px solid #ffffff99;background:#080d1bcf;}
+.souvenir-create-btn,.souvenir-download-btn{display:inline-block;padding:12px 18px;background:var(--pink);color:#fff;border:0;font:inherit;font-weight:850;cursor:pointer;text-decoration:none;}
+.souvenir-create-btn:disabled{opacity:.55;cursor:wait;}
+.souvenir-error{color:#ff9ca9!important;font-weight:800;}
+/* 사옥 이미지 위 실제 외벽 전광판 자리에 사진·메시지를 배치합니다. */
+.donga-billboard-building{position:relative;width:100%;max-width:650px;aspect-ratio:327/519;overflow:hidden;margin:auto;background:#0c1420;}
+.donga-building-photo{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:fill;}
+.donga-facade-display{position:absolute;left:34.2%;top:30.4%;width:26.8%;height:37%;overflow:hidden;transform:skewY(2deg);transform-origin:center;background:#030817;color:#fff;box-shadow:0 0 14px #06152c88;display:flex;flex-direction:column;}
+.donga-facade-upper{flex:1;min-height:0;display:grid;grid-template-rows:48% 52%;overflow:hidden;}
+.donga-facade-souvenir{width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block;}
+.donga-facade-placeholder{display:grid;place-content:center;text-align:center;color:#7bc6ec;font-weight:900;font-size:clamp(7px,1.7vw,12px);background:linear-gradient(130deg,#081326,#232753);line-height:1.2;}
+.donga-facade-current{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:4%;text-align:center;min-height:0;background:linear-gradient(145deg,#100d2d,#10325e);overflow:hidden;}
+.donga-facade-current small{color:#9ddffd;font-size:clamp(6px,1.2vw,10px);font-weight:850;line-height:1.1;}
+.donga-facade-current p{font-size:clamp(7px,1.4vw,14px);line-height:1.3;font-weight:900;margin:4px 0 0;max-height:100%;overflow:hidden;overflow-wrap:anywhere;}
+.donga-facade-ticker{flex:0 0 14%;min-height:0;overflow:hidden;background:#050a17;border-top:1px solid #60d8ff;display:flex;align-items:center;}
+.donga-facade-track{display:flex;align-items:center;width:max-content;white-space:nowrap;gap:24px;animation:dongaFacadeTicker 24s linear infinite;font-size:clamp(6px,1.12vw,11px);font-weight:800;}
+.donga-facade-track span{display:block;min-width:max-content;}.donga-facade-track b{color:#9ee3ff;}
+@keyframes dongaFacadeTicker{to{transform:translateX(-50%);}}
+.donga-wall-caption{color:#a6b4cf;text-align:center;font-size:.65rem;letter-spacing:.12em;margin:8px 0 0;}
+@media(max-width:850px){.donga-facade-current p{font-size:clamp(7px,2.2vw,14px)}.donga-facade-track{font-size:clamp(6px,1.6vw,10px)}.donga-facade-placeholder{font-size:clamp(7px,2vw,11px)}}
+
+
+/* CLEAN V2: 실제 사옥 사진의 컬러 전광판 영역(원본 327x519 중 x112~201, y189~355)에만 배치 */
+.donga-facade-display {
+  left:34.25%; top:36.4%; width:27.25%; height:31.8%;
+  transform:none; clip-path:polygon(0 0,96% 0,100% 100%,0 97%);
+  display:flex; flex-direction:column; box-shadow:none;
+  border:0; background:#030817;
+}
+.donga-facade-souvenir {flex:1 1 auto; min-height:0; width:100%; height:0; object-fit:cover; object-position:center center; display:block; }
+.donga-facade-placeholder {flex:1 1 auto; min-height:0; background:#080f20; font-size:clamp(5px,1vw,10px);}
+.donga-facade-ticker {flex:0 0 16%; height:16%; min-height:0; width:100%; overflow:hidden; border-top:1px solid #7ce4ff; background:#08182a; display:flex; align-items:center;}
+.donga-facade-track {display:flex; align-items:center; flex-wrap:nowrap; width:max-content; min-width:max-content; white-space:nowrap; gap:0; animation:dongaFacadeTicker 28s linear infinite; font-size:clamp(5px,1.06vw,10px); font-weight:850; line-height:1.1;}
+.donga-facade-track span {display:inline-block; flex-shrink:0; margin-right:22px; color:#fff;}
+@keyframes dongaFacadeTicker {from {transform:translateX(0)} to {transform:translateX(-50%)}}
+@media (max-width:850px) {.donga-facade-track {font-size:clamp(5px,1.06vw,10px)}}
+
+/* 기념사진 전체가 4:5 세로 구도 안에 들어오도록 표시합니다. */
+.souvenir-visual-v19 { aspect-ratio:4/5; }
+.souvenir-visual-v19>img { object-fit:contain; object-position:center top; }
+
+
+/* DISPLAY FIX: 5 character cards always in one row; show faces from image top. */
+.profile-screen .character-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:clamp(3px,.7vw,9px); }
+.profile-screen .character-card { min-width:0; overflow:hidden; padding:clamp(2px,.5vw,6px); }
+.profile-screen .character-card img { display:block; width:100%; height:auto; aspect-ratio:3/4; object-fit:cover; object-position:center top; background:#101624; }
+.profile-screen .character-card b,.profile-screen .character-card small { overflow-wrap:anywhere; font-size:clamp(.5rem,1.05vw,.75rem); line-height:1.2; }
+/* Producer pass photo: fill available image frame, prioritizing the face at the top. */
+.profile-screen .producer-pass .pass-photo { width:100%; min-width:0; aspect-ratio:3/4; overflow:hidden; max-height:min(49svh,470px); }
+.profile-screen .producer-pass .pass-photo img { display:block; width:100%; height:100%; object-fit:cover; object-position:center top; }
+@media (max-width:768px) {
+  .profile-screen .profile-layout { grid-template-columns:minmax(0,1fr); }
+  .profile-screen .producer-pass { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .profile-screen .producer-pass .pass-label,.profile-screen .producer-pass .pass-photo { grid-column:1 / -1; }
+  .profile-screen .producer-pass .pass-photo { justify-self:center; width:min(100%,270px); max-height:min(38svh,340px); }
+}
+@media (max-width:640px) {
+  .profile-screen .character-library { padding:9px 5px; }
+  .profile-screen .character-grid { grid-template-columns:repeat(5,minmax(0,1fr)); gap:3px; }
+  .profile-screen .character-card { padding:2px; gap:3px; }
+  .profile-screen .character-card b,.profile-screen .character-card small { font-size:clamp(.49rem,1.9vw,.66rem); }
+}
+
+/* FIX22: 사옥 원본(327 x 519)의 외벽 전광판 실측 위치만 수정합니다.
+   기존 캐릭터 생성, 기념사진 합성, 메시지 전송 코드는 수정하지 않습니다. */
+.donga-billboard-building {
+  position:relative; width:100%; max-width:650px;
+  aspect-ratio:327 / 519; overflow:hidden; isolation:isolate;
+  scrollbar-width:none; -ms-overflow-style:none;
+}
+.donga-building-photo {position:absolute; inset:0; width:100%; height:100%; display:block; object-fit:fill;}
+/* 사진 x=111~201, y=187~354: 이미지 위의 세로형 전광판 위치에 정확히 따라갑니다. */
+.donga-facade-display {
+  position:absolute; left:33.95%; top:36.03%; width:27.83%; height:32.18%;
+  transform:none; clip-path:polygon(0 0,94% 7%,100% 100%,0 99%);
+  display:flex; flex-direction:column; overflow:hidden;
+  border:0; box-shadow:none; background:#020715;
+  scrollbar-width:none; -ms-overflow-style:none;
+}
+.donga-facade-souvenir {
+  display:block; flex:1 1 auto; width:100%; height:0; min-height:0;
+  object-fit:cover; object-position:center 22%;
+}
+.donga-facade-placeholder {flex:1 1 auto; min-height:0;}
+/* 메시지는 사옥 전광판 가장 아래 띠 안에서만 좌측으로 흐릅니다. */
+.donga-facade-ticker {
+  position:relative; flex:0 0 16%; height:16%; min-height:0;
+  width:100%; overflow:hidden; border-top:1px solid #b9eeff;
+  background:#061427; display:flex; align-items:center;
+  scrollbar-width:none; -ms-overflow-style:none;
+}
+.donga-facade-track {
+  display:flex; flex-wrap:nowrap; align-items:center;
+  width:max-content; min-width:max-content; gap:0; white-space:nowrap;
+  font-size:clamp(6px,1.08vw,11px); font-weight:850;
+  animation:dongaFacadeTicker 27s linear infinite;
+  scrollbar-width:none;
+}
+.donga-facade-ticker-group {
+  display:flex; flex:0 0 auto; align-items:center; gap:22px; padding-right:22px;
+}
+.donga-facade-ticker-group span {display:inline-block; flex:0 0 auto; color:#fff; margin:0;}
+.donga-facade-ticker-group b {color:#9de8ff;}
+@keyframes dongaFacadeTicker {from {transform:translateX(0)} to {transform:translateX(-50%)}}
+/* 회색 가로 스크롤바가 보이지 않도록 전광판 영역에 한해 숨깁니다. */
+.donga-billboard-building::-webkit-scrollbar,
+.donga-facade-display::-webkit-scrollbar,
+.donga-facade-ticker::-webkit-scrollbar,
+.donga-facade-track::-webkit-scrollbar {display:none; width:0; height:0;}
+@media(max-width:850px) {.donga-facade-track {font-size:clamp(6px,1.08vw,11px);}}
+
+
+.donga-facade-display-v23 {
+  left:34.25%;
+  top:36.4%;
+  width:27.25%;
+  height:31.8%;
+  transform:none;
+  clip-path:polygon(0 0,96% 0,100% 100%,0 97%);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(180deg,#8cb5ff 0%,#d7cdfc 38%,#f2ddd5 62%,#172655 100%);
+  border:0;
+  box-shadow:inset 0 0 12px rgba(255,255,255,.18), inset 0 -18px 35px rgba(5,8,18,.18);
+}
+.donga-facade-canvas {
+  position:relative;
+  flex:1 1 auto;
+  min-height:0;
+  padding:5.5% 5.2% 3.8%;
+  display:flex;
+  flex-direction:column;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,.50) 0, rgba(255,255,255,0) 24%),
+    radial-gradient(circle at 82% 12%, rgba(255,255,255,.35) 0, rgba(255,255,255,0) 22%),
+    linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,0) 42%);
+}
+.donga-facade-header-v23 {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:8px;
+  margin-bottom:4%;
+  color:#ffffff;
+  text-shadow:0 1px 6px rgba(0,0,0,.12);
+}
+.donga-facade-brand-v23,
+.donga-facade-wall-v23 {
+  font-size:clamp(5px,.98vw,10px);
+  line-height:1.18;
+  letter-spacing:.08em;
+  font-weight:900;
+}
+.donga-facade-wall-v23 { text-align:right; }
+.donga-facade-headline-v23 {
+  width:72%;
+  color:#243c8e;
+  font-size:clamp(13px,2.7vw,28px);
+  font-weight:900;
+  line-height:1.06;
+  letter-spacing:-.05em;
+  white-space:pre-line;
+  word-break:keep-all;
+  text-shadow:0 1px 0 rgba(255,255,255,.4);
+  margin-bottom:4.5%;
+}
+.donga-facade-support-v23 {
+  width:58%;
+  margin:0 0 4.5%;
+  color:#4b5f98;
+  font-size:clamp(5px,1.08vw,10px);
+  line-height:1.35;
+  font-weight:800;
+  word-break:keep-all;
+}
+.donga-facade-lower-v23 {
+  margin-top:auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.18fr) minmax(0,.62fr);
+  gap:4.5%;
+  align-items:end;
+  min-height:0;
+}
+.donga-facade-photo-v23 {
+  position:relative;
+  min-height:0;
+  height:100%;
+  aspect-ratio:1 / 1.02;
+  border-radius:14px 14px 0 0;
+  overflow:hidden;
+  background:#311e4f;
+  box-shadow:0 12px 18px rgba(31,18,72,.18);
+}
+.donga-facade-photo-v23::after {
+  content:'';
+  position:absolute;
+  inset:auto 0 0 0;
+  height:28%;
+  background:linear-gradient(180deg,rgba(9,13,27,0) 0%,rgba(7,10,25,.42) 45%,rgba(7,10,25,.72) 100%);
+  pointer-events:none;
+}
+.donga-facade-souvenir-v23 {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+}
+.donga-facade-placeholder-v23 {
+  display:grid;
+  place-items:center;
+  width:100%;
+  height:100%;
+  color:#fff;
+  font-size:clamp(6px,1vw,10px);
+  font-weight:900;
+  letter-spacing:.06em;
+  background:linear-gradient(160deg,#8f97ff,#4d387b 72%);
+}
+.donga-facade-sidecard-v23 {
+  align-self:end;
+  min-height:58%;
+  padding:10% 9%;
+  border-radius:16px;
+  background:linear-gradient(180deg,rgba(255,251,253,.88) 0%,rgba(255,239,243,.94) 100%);
+  color:#576198;
+  box-shadow:0 10px 18px rgba(73,53,100,.18);
+  display:grid;
+  gap:3%;
+  text-align:left;
+}
+.donga-sidecard-icon-v23 {
+  font-size:clamp(11px,2vw,20px);
+  line-height:1;
+}
+.donga-sidecard-label-v23 {
+  color:#5c6eb3;
+  font-size:clamp(7px,1.15vw,11px);
+  font-weight:900;
+  letter-spacing:.05em;
+}
+.donga-sidecard-name-v23 {
+  color:#394680;
+  font-size:clamp(6px,1.1vw,10px);
+  font-weight:900;
+  word-break:break-word;
+}
+.donga-sidecard-copy-v23 {
+  color:#6270a7;
+  font-size:clamp(5px,1vw,9px);
+  line-height:1.32;
+  font-weight:800;
+  word-break:keep-all;
+}
+.donga-facade-ticker-v23 {
+  flex:0 0 11.5%;
+  height:11.5%;
+  width:100%;
+  min-height:0;
+  border-top:1px solid rgba(255,255,255,.18);
+  background:linear-gradient(180deg,#2b2e7a 0%,#35285f 100%);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+.donga-facade-track {
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  width:max-content;
+  min-width:max-content;
+  gap:0;
+  white-space:nowrap;
+  font-size:clamp(5px,1.04vw,10px);
+  font-weight:900;
+  line-height:1.1;
+  animation:dongaFacadeTicker 26s linear infinite;
+}
+.donga-facade-ticker-group {
+  display:flex;
+  flex:0 0 auto;
+  align-items:center;
+  gap:18px;
+  padding-right:18px;
+}
+.donga-facade-ticker-group span {
+  display:inline-block;
+  flex:0 0 auto;
+  color:#fff;
+}
+.donga-facade-ticker-group b {
+  color:#ffd6f0;
+}
+@media (max-width:850px) {
+  .donga-billboard-building { max-width:560px; }
+  .donga-facade-photo-v23 { border-radius:10px 10px 0 0; }
+  .donga-facade-sidecard-v23 { border-radius:12px; }
+}
+
+/* PATCH24: fix23 시안은 PATCH22의 실측 전광판 좌표를 그대로 사용합니다. */
+.donga-facade-display-v23 {left:33.95%;top:36.03%;width:27.83%;height:32.18%;clip-path:polygon(0 0,94% 7%,100% 100%,0 99%);scrollbar-width:none;-ms-overflow-style:none;}
+.donga-facade-display-v23::-webkit-scrollbar,.donga-facade-canvas::-webkit-scrollbar,.donga-facade-ticker-v23::-webkit-scrollbar{display:none;width:0;height:0;}
+
+/* CMS V9: header tagline + artist selector */
+.brand-side-text{display:inline-flex;align-items:center;max-width:220px;padding-left:14px;margin-left:4px;border-left:1px solid rgba(255,255,255,.16);font-size:.66rem;line-height:1.3;letter-spacing:.08em;color:var(--muted,#9aa7c3);text-align:left}
+.artist-select-panel{margin:18px 0 22px;padding:16px;border:1px solid #283550;background:#0a101d}
+.artist-select-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.artist-select-card{min-width:0;padding:10px;border:1px solid #2c3955;background:#0e1626;color:#fff;display:grid;gap:6px;text-align:left;cursor:pointer}
+.artist-select-card.selected{border-color:var(--cyan,#5ee7ff);box-shadow:0 0 0 1px var(--cyan,#5ee7ff)}
+.artist-select-card img,.artist-placeholder{width:100%;aspect-ratio:4/5;object-fit:contain;object-position:center bottom;background:#070b14;display:grid;place-items:center;font-size:2rem}
+.artist-select-card b{font-size:.85rem}.artist-select-card small{color:#aebad0;font-size:.68rem}
+.plan-variant-label{margin:0 0 12px;color:var(--cyan,#5ee7ff);font-size:.72rem;font-weight:800;letter-spacing:.1em}
+@media(max-width:760px){.brand-side-text{display:none}.artist-select-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.topbar .brand > .brand-side-text{display:inline-flex!important;width:auto!important;height:auto!important;margin:0 0 0 8px!important;border-radius:0!important;border:0!important;border-left:1px solid rgba(255,255,255,.16)!important;color:#8f9db8!important;place-items:initial!important}
+
+
+/* CMS V9: 서로 다른 원본 비율의 참가자 캐릭터도 같은 프레임 안에서 잘리지 않게 표시 */
+.character-card .character-visual,
+.character-card img,
+.profile-character-card img {
+  width:100%;
+  aspect-ratio:3 / 4;
+  object-fit:contain;
+  object-position:center bottom;
+}
+.admin-check-row{display:flex!important;align-items:center;gap:8px;flex-direction:row!important}
+.admin-check-row input{width:auto!important}
+
+/* CMS V10: Experience sound toggle */
+.kcp-sound-toggle{position:fixed;right:18px;bottom:18px;z-index:80;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(12,18,36,.88);color:#fff;padding:9px 13px;font-size:11px;font-weight:800;letter-spacing:.06em;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(10px)}
+
+
+/* V12: 서로 다른 비율의 캐릭터도 자르지 않고 전체 모습을 최대한 유지 */
+.profile-screen .character-card img,
+.profile-screen .producer-pass .pass-photo img,
+.profile-screen .artist-select-card img { object-fit: contain !important; object-position: center center !important; }
+.select-image-shell{position:relative;display:block;width:100%;min-width:0;}
+.select-image-shell>img{display:block;width:100%;}
+.image-zoom-trigger{position:absolute;right:6px;bottom:6px;z-index:3;padding:5px 8px;border-radius:999px;background:#07101ddd;border:1px solid #ffffff45;color:#fff;font-size:.62rem;line-height:1;cursor:zoom-in;backdrop-filter:blur(6px)}
+.image-zoom-trigger:hover{border-color:var(--cyan,#5ee7ff);color:var(--cyan,#5ee7ff)}
+.character-preview-modal{position:fixed;inset:0;z-index:120;background:#02060ce8;display:grid;place-items:center;padding:20px;backdrop-filter:blur(10px)}
+.character-preview-dialog{position:relative;width:min(680px,94vw);height:min(82vh,760px);display:grid;grid-template-rows:minmax(0,1fr) auto;gap:10px;padding:18px;border:1px solid #ffffff35;background:#0a111f;border-radius:16px;box-shadow:0 28px 80px #000b}
+.character-preview-dialog img{width:100%;height:100%;min-height:0;object-fit:contain;object-position:center}
+.character-preview-dialog strong{text-align:center;color:#fff;font-size:1.05rem}
+.character-preview-close{position:absolute;right:10px;top:8px;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid #ffffff44;background:#07101ddd;color:#fff;font-size:1.6rem;cursor:pointer}
+
+
+/* V18 FIX: 캐릭터 원본 비율에 따라 카드 안에서 자동 정규화. 다른 화면에는 영향 없음. */
+.profile-screen .character-card .select-image-shell {
+  height: clamp(190px, 20vw, 300px); overflow:hidden; background:#f4f1f0; display:flex; align-items:center; justify-content:center;
+}
+.profile-screen .character-card .select-image-shell > img { width:100%!important; height:100%!important; background:#f4f1f0!important; object-position:center center!important; }
+.profile-screen .character-card .select-image-shell > img[data-shape="wide"] { object-fit:cover!important; }
+.profile-screen .character-card .select-image-shell > img[data-shape="portrait"] { object-fit:contain!important; }
+.profile-screen .producer-pass .pass-photo { background:#f4f1f0!important; }
+.profile-screen .producer-pass .pass-photo img { width:100%!important; height:100%!important; object-position:center center!important; }
+.profile-screen .producer-pass .pass-photo img[data-shape="wide"] { object-fit:cover!important; }
+.profile-screen .producer-pass .pass-photo img[data-shape="portrait"] { object-fit:contain!important; }
+@media(max-width:900px){.profile-screen .character-card .select-image-shell{height:clamp(150px,28vw,240px)}}
+
+/* V18 FIX: 기념사진 생성 전에는 무대 원본만 표시. 프론트 레이어 덮어쓰기 금지. */
+.souvenir-stage-only-preview{position:relative;width:100%;height:100%;overflow:hidden;background:#070b14;}
+.souvenir-stage-only-preview .souvenir-preview-stage{display:block;width:100%;height:100%;object-fit:cover;object-position:center center;}
+.souvenir-stage-only-preview .souvenir-preview-label{position:absolute;left:18px;bottom:18px;z-index:2;padding:10px 12px;background:#07101ddd;border:1px solid #ffffff45;display:grid;gap:3px;}
+
+/* ===== V27 QUALITY PATCH: PLAN VIDEO / PREMIUM SOUVENIR / LED BILLBOARD ===== */
+.plan-with-video{position:relative;isolation:isolate;background:#060a13;}
+.plan-video-bg{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none;}
+.plan-video-bg video{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.06) brightness(.58);transform:scale(1.015);}
+.plan-video-bg span{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,8,18,.9) 0%,rgba(4,8,18,.67) 52%,rgba(4,8,18,.82) 100%),linear-gradient(180deg,rgba(3,6,14,.35),rgba(3,6,14,.76));backdrop-filter:blur(.5px);}
+.plan-content-layer{position:relative;z-index:1;display:flex;flex-direction:column;min-height:calc(100svh - 96px);}
+.plan-with-video .timeline-card,.plan-with-video .brief-card{background:linear-gradient(145deg,rgba(10,17,31,.9),rgba(13,25,43,.78));border-color:rgba(127,231,255,.2);box-shadow:0 18px 55px rgba(0,0,0,.3);backdrop-filter:blur(12px);}
+.plan-with-video .section-heading{text-shadow:0 2px 18px rgba(0,0,0,.8);}
+
+/* 기념사진은 이미 완성된 한 장을 그대로 보여주되 화면 자체도 프리미엄 프레임으로 보이게 합니다. */
+.souvenir-card-v19{background:linear-gradient(145deg,#0a1020,#111a2e);border:1px solid rgba(126,229,255,.2);box-shadow:0 28px 70px rgba(0,0,0,.35);}
+.souvenir-visual-v19{aspect-ratio:16/9!important;background:#03060d;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);}
+.souvenir-visual-v19>img{width:100%;height:100%;object-fit:cover!important;object-position:center!important;filter:saturate(1.04) contrast(1.025);}
+.souvenir-visual-v19::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 -50px 70px rgba(0,0,0,.18),inset 0 0 60px rgba(91,172,255,.08);}
+
+/* 실제 사옥 사진의 전광판 위치는 유지하고, 내부만 고급 LED 패널처럼 표현합니다. */
+.donga-facade-display{background:#020713;box-shadow:0 0 18px rgba(68,205,255,.28),inset 0 0 18px rgba(81,126,255,.16);}
+.donga-facade-display::before{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.028) 0 1px,transparent 1px 3px),linear-gradient(115deg,transparent 0 37%,rgba(255,255,255,.08) 45%,transparent 53%);mix-blend-mode:screen;opacity:.7;}
+.donga-facade-souvenir{filter:saturate(1.14) contrast(1.08) brightness(.94);transform:scale(1.015);}
+.donga-facade-ticker{position:relative;z-index:5;background:linear-gradient(90deg,#061528,#0b2440,#07172a);border-top:1px solid rgba(117,229,255,.82);box-shadow:0 -5px 14px rgba(52,195,255,.13);}
+.donga-facade-track{letter-spacing:.025em;text-shadow:0 0 5px rgba(126,229,255,.38);}
+.donga-facade-track b{color:#9eeaff;text-shadow:0 0 7px rgba(93,221,255,.62);}
+
+/* ===== V28: STEP 03/04 VIDEO BACKGROUND + MOVING BILLBOARD BUILDING ===== */
+.scene-with-video{position:relative;isolation:isolate;background:#060a13;}
+.scene-video-bg{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none;}
+.scene-video-bg video{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.06) brightness(.5);transform:scale(1.015);}
+.scene-video-bg span{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,8,18,.88),rgba(4,8,18,.62) 52%,rgba(4,8,18,.8)),linear-gradient(180deg,rgba(3,6,14,.3),rgba(3,6,14,.74));}
+.scene-video-content{position:relative;z-index:1;min-height:calc(100svh - 96px);display:flex;flex-direction:column;}
+.scene-with-video .control-card{background:linear-gradient(145deg,rgba(10,17,31,.9),rgba(13,25,43,.78));backdrop-filter:blur(11px);border-color:rgba(127,231,255,.18);box-shadow:0 18px 50px rgba(0,0,0,.25);}
+.donga-building-video{display:block;width:100%;height:100%;object-fit:cover;object-position:center center;}
+
+/* ===== V28.5 STEP 03/04 VIDEO BRIGHTNESS =====
+   영상은 그대로 유지하고, 기존 어두운 필터/오버레이만 완화합니다. */
+.scene-with-video .scene-video-bg video{
+  filter:saturate(.96) contrast(1.04) brightness(.68)!important;
+}
+.scene-with-video .scene-video-bg span{
+  background:
+    linear-gradient(90deg,rgba(4,8,18,.68),rgba(4,8,18,.42) 52%,rgba(4,8,18,.60)),
+    linear-gradient(180deg,rgba(3,6,14,.16),rgba(3,6,14,.52))!important;
+}
+
+/* ===== V28.7 REUSE EXISTING SCENE VIDEOS AS SOFT BACKGROUNDS ===== */
+.reuse-video-screen{position:relative;isolation:isolate;overflow:hidden}
+.reuse-video-screen>.reuse-scene-video-bg{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.reuse-scene-video-bg video{width:100%;height:100%;object-fit:cover;filter:blur(8px) brightness(.34) saturate(.82);transform:scale(1.05)}
+.reuse-scene-video-bg span{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,7,16,.72),rgba(3,7,16,.56),rgba(3,7,16,.68))}
+.reuse-video-screen .media-frame,.reuse-video-screen .scene-note,.reuse-video-screen .incident-copy,.reuse-video-screen .response-grid,.reuse-video-screen .result-hero,.reuse-video-screen .score-grid,.reuse-video-screen .result-bottom,.reuse-video-screen .generated-results,.reuse-video-screen .actions,.reuse-video-screen .system-actions{position:relative;z-index:1}
+
+/* CONNECT WALL registered background video */
+.donga-billboard-building{position:relative;overflow:hidden}
+.donga-building-video{position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover!important;z-index:0}
+.donga-facade-display{position:absolute;z-index:2}
+
+/* Admin media hover + click-to-large */
+.admin-home-step-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:10px}
+.admin-home-step-item{display:grid;gap:8px}
+.admin-step-preview-button,.admin-preview-button{position:relative;width:100%;border:0;padding:0;background:#080d18;overflow:hidden;cursor:zoom-in}
+.admin-step-preview-button{aspect-ratio:16/9}
+.admin-step-preview-button img,.admin-step-preview-button video,.admin-preview-button video{display:block;width:100%;height:100%;object-fit:cover;transition:transform .22s ease}
+.admin-step-preview-button:hover img,.admin-step-preview-button:hover video,.admin-preview-button:hover video{transform:scale(1.08)}
+.admin-step-preview-button em,.admin-preview-button em{position:absolute;left:8px;bottom:8px;padding:5px 8px;background:#050914d9;color:#fff;font-size:.72rem;font-style:normal}
+.admin-image-dialog video{display:block;max-width:min(1100px,88vw);max-height:78vh;width:auto;height:auto;background:#000}
+@media(max-width:720px){.admin-home-step-grid{grid-template-columns:1fr}}
+
+/* ===== V28.8 FRONT STEP MEDIA PREVIEW ===== */
+.front-step-media-button{position:relative;display:block;width:100%;height:100%;padding:0;border:0;background:transparent;overflow:hidden;cursor:zoom-in}
+.front-step-media-button img,.front-step-media-button video{width:100%;height:100%;object-fit:cover;transition:transform .28s ease,filter .28s ease}
+.front-step-media-button:hover img,.front-step-media-button:hover video{transform:scale(1.1);filter:brightness(1.05)}
+.front-step-media-button span{position:absolute;right:10px;bottom:10px;padding:6px 9px;background:#050914d9;color:#fff;font-size:.68rem;opacity:0;transition:opacity .2s}
+.front-step-media-button:hover span{opacity:1}
+.front-step-modal{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:rgba(2,5,12,.88);padding:4vw}
+.front-step-modal-inner{position:relative;max-width:1200px;max-height:88vh}
+.front-step-modal img,.front-step-modal video{display:block;max-width:92vw;max-height:84vh;width:auto;height:auto;object-fit:contain;background:#000}
+.front-step-modal-close{position:absolute;right:-12px;top:-12px;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid #65708a;background:#0b1220;color:#fff;font-size:26px;cursor:pointer}
+
+/* ===== V28.8 BILLBOARD =====
+   Before souvenir generation: show only the real building/video billboard.
+   No artificial black MY K-CULTURE PHOTO rectangle. */
+.donga-facade-display:has(.donga-facade-souvenir){overflow:hidden}
+.donga-facade-souvenir{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+/* Keep the ticker on the same billboard face and prevent spill. */
+.donga-facade-ticker{overflow:hidden;max-width:100%}
+
+/* ===== V28.8 MOBILE TOP BAR ===== */
+@media(max-width:720px){
+  .topbar .brand-copy,.topbar .brand-text,.app-header .brand-copy,.app-header .brand-text,
+  .site-header .brand-copy,.site-header .brand-text{display:none!important}
+  .topbar,.app-header,.site-header{min-height:54px!important;padding-left:12px!important;padding-right:12px!important}
+  .topbar .brand,.app-header .brand,.site-header .brand{gap:0!important;max-width:112px}
+  .topbar .brand img,.app-header .brand img,.site-header .brand img{max-height:32px;width:auto}
+}
+
+/* Arrival chip: fixed artist name removed; keep compact */
+.arrival .scene-chip,.arrival .video-chip{white-space:nowrap}
+
+/* ===== V28.9 INCIDENT 02: video -> choices breathing room only ===== */
+.second-incident .media-frame,
+.incident .media-frame{
+  margin-bottom:24px!important;
+}
+
+/* ===== V28.9 CURVED DONG-A BILLBOARD =====
+   One curved coordinate system for photo + ticker.
+   The building/video remains unchanged underneath. */
+.donga-billboard-building{
+  perspective:900px;
+  transform-style:preserve-3d;
+}
+
+/* The display face itself is clipped to the LED facade.
+   Border radius follows the visible cylindrical facade edges. */
+.donga-facade-display{
+  overflow:hidden!important;
+  border-radius:10% 4% 8% 11% / 4% 3% 6% 7%!important;
+  transform-origin:50% 50%!important;
+  transform:perspective(900px) rotateY(-3.2deg) rotateX(.35deg) skewY(1.15deg)!important;
+  clip-path:polygon(3.2% 0%,96.4% 5.2%,99.2% 95.0%,0% 100%)!important;
+  background:#07101b;
+}
+
+/* Photo follows the same facade face. A tiny horizontal bow is simulated
+   with scale + rounded clipping, without regenerating/deforming people. */
+.donga-facade-souvenir{
+  position:absolute!important;
+  inset:0 0 13.5% 0!important;
+  width:100%!important;
+  height:86.5%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  transform:scaleX(1.035)!important;
+  transform-origin:center!important;
+  border-radius:9% 4% 3% 8% / 3% 3% 5% 6%!important;
+}
+
+/* Default image is deliberately softer so it reads as signage content,
+   then the real souvenir replaces it automatically. */
+.donga-facade-souvenir.is-default-photo{
+  filter:saturate(.9) brightness(.82) contrast(1.04);
+}
+
+/* Bottom message ribbon is part of the same curved facade,
+   not a separate straight rectangle. */
+.donga-facade-ticker{
+  position:absolute!important;
+  left:0!important;
+  right:0!important;
+  bottom:0!important;
+  height:14.5%!important;
+  width:100%!important;
+  max-width:none!important;
+  overflow:hidden!important;
+  transform:perspective(700px) rotateX(-1deg) skewY(.8deg) scaleX(1.035)!important;
+  transform-origin:center bottom!important;
+  border-radius:0 0 9% 11% / 0 0 25% 28%!important;
+  clip-path:polygon(0 3%,100% 0,98.5% 91%,1.5% 100%)!important;
+}
+.donga-facade-track{height:100%;display:flex;align-items:center}
+
+/* Keep V28.8 pre-photo rule from hiding the now-required default visual. */
+.donga-facade-display:has(.donga-facade-souvenir){overflow:hidden!important}
+
+/* ===== V28.10 BILLBOARD STRUCTURE RESET =====
+   V28.9의 '큰 사각형을 CSS로 비트는 방식'을 폐기.
+   건물 영상의 실제 LED 면을 기준으로 오버레이를 직접 잘라 넣는다. */
+.donga-billboard-building{
+  position:relative!important;
+  overflow:hidden!important;
+  perspective:none!important;
+  transform-style:flat!important;
+}
+
+/* Screenshot/video coordinate calibration.
+   This polygon follows the visible Dong-A curved LED facade:
+   upper-left cylindrical edge -> upper-right face -> lower-right -> lower-left.
+   No extra border/background/frame is drawn. */
+.donga-facade-display-real{
+  position:absolute!important;
+  z-index:3!important;
+  left:31.0%!important;
+  top:31.2%!important;
+  width:32.0%!important;
+  height:43.0%!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow:hidden!important;
+  transform:none!important;
+  clip-path:polygon(
+    4.5% 0%,
+    96.5% 6.0%,
+    99.5% 94.0%,
+    1.0% 100%
+  )!important;
+}
+
+/* The photo fills only the photo portion of the real LED surface.
+   A mild asymmetric horizontal scale gives the left cylindrical edge
+   without changing faces/body via AI. */
+.donga-facade-display-real .donga-facade-souvenir{
+  position:absolute!important;
+  left:-2.5%!important;
+  top:0!important;
+  width:105%!important;
+  height:84.5%!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  transform:perspective(700px) rotateY(-2.2deg)!important;
+  transform-origin:18% 50%!important;
+  filter:brightness(.94) contrast(1.05) saturate(.96)!important;
+}
+
+/* Message ribbon shares the SAME real-facade mask, so it cannot detach
+   into a separate straight rectangle. */
+.donga-facade-display-real .donga-facade-ticker{
+  position:absolute!important;
+  z-index:4!important;
+  left:-1%!important;
+  right:auto!important;
+  bottom:0!important;
+  width:102%!important;
+  height:16.5%!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow:hidden!important;
+  transform:perspective(700px) rotateY(-2.2deg)!important;
+  transform-origin:18% 50%!important;
+  clip-path:polygon(1% 8%,99% 0%,98% 88%,2% 100%)!important;
+}
+
+/* IMPORTANT: before photoUrl exists there is NO overlay at all.
+   The original registered building video/signage remains untouched. */
+.donga-facade-placeholder,
+.donga-facade-souvenir.is-default-photo{display:none!important}
+
+/* ===== V28.11 SVG LED SURFACE =====
+   HTML rectangle/perspective overlay is retired.
+   One SVG path is the immutable LED facade for default/photo/ticker. */
+.donga-facade-display,.donga-facade-display-real{display:none!important}
+.donga-led-overlay{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  z-index:5!important;
+  pointer-events:none!important;
+  overflow:visible!important;
+}
+.donga-led-photo{filter:brightness(.92) contrast(1.06) saturate(.96)}
+.donga-led-default text{
+  fill:#fff;
+  font-family:Inter,Arial,sans-serif;
+  font-size:42px;
+  font-weight:800;
+  letter-spacing:4px;
+}
+.donga-led-default .donga-led-default-sub{
+  fill:#77d8ff;
+  font-size:19px;
+  font-weight:700;
+  letter-spacing:3px;
+}
+.donga-svg-ticker{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:rgba(2,14,29,.92);
+  color:#e8f8ff;
+  font-size:18px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.donga-svg-ticker .donga-facade-track{height:100%;display:flex;align-items:center}
+
+/* ===== V28.12 - MEASURED 720x1280 BILLBOARD FRAME ===== */
+.donga-led-overlay:not(.donga-led-overlay-v2812){display:none!important}
+.donga-led-overlay-v2812{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  z-index:6!important;
+  pointer-events:none!important;
+  overflow:visible!important;
+}
+.donga-led-photo-v2812{
+  filter:brightness(.94) contrast(1.035) saturate(.96);
+}
+.donga-svg-ticker-v2812{
+  height:100%!important;
+  background:rgba(2,15,29,.88)!important;
+  font-size:15px!important;
+  line-height:1!important;
+}
+
+/* ===== V28.13 EXACT VIDEO/OVERLAY COORDINATE LOCK =====
+   The supplied video is 720x1280 (9:16). The container, video and SVG
+   must share exactly the same geometry. No cover crop, no old admin URL. */
+.donga-billboard-building{
+  width:100%!important;
+  max-width:650px!important;
+  aspect-ratio:9/16!important;
+  position:relative!important;
+  overflow:hidden!important;
+  margin:auto!important;
+  background:#0c1420!important;
+}
+.donga-building-video{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:fill!important;
+  object-position:0 0!important;
+  z-index:0!important;
+}
+.donga-led-overlay-v2812{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  z-index:6!important;
+  object-fit:fill!important;
+  transform:none!important;
+}
+
+/* Photo stays inside the measured LED face; subtle left-side cylindrical shading. */
+.donga-led-photo-v2812{
+  filter:brightness(.93) contrast(1.035) saturate(.96)!important;
+}
+
+/* ===== V28.14 LED SILHOUETTE FINE CALIBRATION =====
+   V28.13 coordinate lock is preserved. No container/video geometry changes.
+   Only the real LED silhouette and surface treatment are refined. */
+.donga-led-overlay-v2812{transform:none!important}
+.donga-led-photo-v2812{
+  filter:brightness(.91) contrast(1.025) saturate(.94)!important;
+}
+.donga-svg-ticker-v2812{
+  background:rgba(3,16,28,.84)!important;
+  font-size:14px!important;
+}
+
+/* ===== V28.15 SCREENSHOT CALIBRATION =====
+   Keep V28.13/14 video coordinate lock; only resize/reposition the LED face. */
+.donga-svg-ticker-v2812{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  padding:0!important;
+  line-height:1!important;
+  font-size:13px!important;
+}
+.donga-svg-ticker-v2812 .donga-facade-track{
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  will-change:transform;
+  animation-duration:42s!important;
+  animation-timing-function:linear!important;
+}
+.donga-svg-ticker-v2812 .donga-facade-ticker-group{
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+}
+.donga-svg-ticker-v2812 .donga-facade-ticker-group span{
+  display:inline-flex!important;
+  align-items:center!important;
+  height:100%!important;
+  line-height:1.2!important;
+}

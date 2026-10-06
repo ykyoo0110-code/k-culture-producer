@@ -1,0 +1,18 @@
+/* 생성된 사옥 시안을 원본 비율 그대로 표시하며, 바뀌는 개인 사진·이름·메시지만 실제 광고판 위에 갱신합니다. */
+.kcp-donga-artwork{position:relative;width:100%;max-width:650px;aspect-ratio:941/1672;margin:0 auto;overflow:hidden;isolation:isolate;background:#d7dce8}
+.kcp-donga-artwork-bg{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+/* 원본 시안에서 실제 기념사진 카드 좌표(기준 941×1672). 사옥 외벽 전체를 덮지 않습니다. */
+.kcp-donga-artwork-photo{position:absolute;left:28.2%;top:39.65%;width:33.4%;height:22%;object-fit:cover;object-position:center 38%;border-radius:15% 15% 1% 1%;transform:skewY(.2deg);box-shadow:0 0 3px #5d387c25}
+/* 시안에 인쇄된 데모 이름을 현재 참가자 이름으로 가립니다. */
+.kcp-donga-artwork-name{position:absolute;left:63.3%;top:48.9%;width:12.7%;height:13.2%;padding:1.0% .7%;display:flex;flex-direction:column;justify-content:center;gap:3%;overflow:hidden;border-radius:13% 13% 9% 9%;background:linear-gradient(175deg,#ffefff,#fce5f3);color:#394e91;text-align:center;box-shadow:0 0 2px #c5a9dc}
+.kcp-donga-artwork-name span{font-weight:900;font-size:clamp(5px,.9vw,9px)}
+.kcp-donga-artwork-name strong{font-weight:900;font-size:clamp(6px,1vw,11px);overflow-wrap:anywhere}
+.kcp-donga-artwork-name small{font-weight:800;font-size:clamp(4px,.75vw,8px);line-height:1.2;overflow-wrap:anywhere}
+/* 전광판 밑 테두리에서 기존 정적 글씨를 덮고, 참가자 메시지만 흐르게 합니다. */
+.kcp-donga-artwork-ticker{position:absolute;left:26.1%;top:61.9%;width:50.9%;height:3.55%;box-sizing:border-box;overflow:hidden;border-radius:0 0 5% 8%;display:flex;align-items:center;background:linear-gradient(180deg,#32255a,#231d52);transform:skewY(1.2deg);color:#fff}
+.kcp-donga-artwork-ticker-track{display:flex;align-items:center;flex-wrap:nowrap;min-width:max-content;width:max-content;white-space:nowrap;animation-name:kcpArtTicker;animation-timing-function:linear;animation-iteration-count:infinite;animation-play-state:running;will-change:transform;transform:translate3d(0,0,0);font-size:clamp(5px,1.05vw,11px);font-weight:900;line-height:1.2}
+.kcp-donga-artwork-ticker-group{display:flex;align-items:center;flex:0 0 auto;gap:22px;padding-right:22px}
+.kcp-donga-artwork-ticker-group span{flex:0 0 auto}.kcp-donga-artwork-ticker-group b{color:#ffc7e8}
+@keyframes kcpArtTicker{from{transform:translate3d(0,0,0)}to{transform:translate3d(-33.3333%,0,0)}}
+@media(max-width:650px){.kcp-donga-artwork-ticker-track{font-size:clamp(4px,1.05vw,7px)}.kcp-donga-artwork-name strong{font-size:clamp(5px,1.05vw,8px)}}
+@media(prefers-reduced-motion:reduce){.kcp-donga-artwork-ticker-track{animation-play-state:running}}
